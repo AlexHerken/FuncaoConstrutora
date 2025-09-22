@@ -30,13 +30,13 @@ function Calculadora() {
         this.display.value = this.display.value.slice(0, -1); //retorna a cadeia do inicio até o penultimo
     }
 
-    this.realizaConta () => {
+    this.realizaConta = () => {
         try{
             const conta = eval(this.display.value);
 
             if(!conta) {
                 alert('conta inválida');
-                return
+                return;
             }
 
             this.display.value = conta;
@@ -45,7 +45,7 @@ function Calculadora() {
             alert('conta inválida');
             return;
         }
-    }
+    };
 
     this.capturaEnter = () =>{
         document.addEventListener('keyup', e =>{
