@@ -20,6 +20,7 @@ function Calculadora() {
 
     this.addNumDisplay = (el) => {
         this.display.value += el.innerText; //adicionando o botão que foi passado ao display
+        this.display.focus(); //foca no display
     };
 
     this.clear = () => {
@@ -48,7 +49,7 @@ function Calculadora() {
     };
 
     this.capturaEnter = () =>{
-        document.addEventListener('keyup', e =>{
+        this.display.addEventListener('keypress', e =>{
             if(e.keyCode !== 13) return;
 
             this.realizaConta();
